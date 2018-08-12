@@ -53,15 +53,54 @@ input {
     line-height: 30px;
     text-decoration: none; 
   }
-  a {
-    text-decoration: none !important;
+  #answercontent{
+      width:500px;
+      line-height:50px;
+
+  }
+  
+  .option-wrapper {
+      display: inline-block;
+      position: relative;
+  }
+  
+  
+.option-wrapper .option-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 2px #cccccc;
+    padding: 0;
+
 }
-ul{
-    list-style-type:none;
+
+.option-wrapper:hover .option-list {
+    display: block
 }
-button{
+
+.option-wrapper .option-list li {
+    white-space: nowrap;
+    list-style: none;
+    padding: 5px 10px;
+}
+
+ a {
+            text-decoration: none !important;
+            
+        
+}
+button {
     background-color: rgb(69, 34, 165);
-    
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
 }
 h4{
     font-family: italic;
@@ -70,8 +109,6 @@ h4{
     
 
 }
-table{
-    border-spacing: 10px;
-   
-     
-}
+
+
+

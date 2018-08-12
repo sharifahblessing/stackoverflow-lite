@@ -19,6 +19,19 @@
     background-color: #ddd;
     
 }
+a {
+    text-decoration: none !important;
+}
+button {
+    background-color: rgb(69, 34, 165);;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 
 
 .navbar a.intro {
@@ -40,9 +53,20 @@
     overflow-y: hidden;
     top: 15%;
 }
-input {
-    background-color:lightgrey;  
+
+input[type=submit] {
+    background-color:rgb(99, 104, 170);
+    color: white;
+    cursor: pointer;
+
+  }
+  
+  input[type=submit]:hover {
+    background-color:rgb(99, 104, 170);
    
+  }
+  input {
+    background-color:lightgrey;  
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -53,25 +77,27 @@ input {
     line-height: 30px;
     text-decoration: none; 
   }
-  a {
-    text-decoration: none !important;
-}
-ul{
-    list-style-type:none;
-}
-button{
-    background-color: rgb(69, 34, 165);
-    
-}
-h4{
-    font-family: italic;
-    font-size: 30px;
-    color:rgb(69, 34, 165);
-    
+  .card{
+      padding:20px;
+      background-color: rgb(69, 34, 165);
+      margin :10px;
+      border-radius:8px;
+      
+   
+  }
+  #questionbody{
+    line-height:100px;
+    width:600px
 
 }
-table{
-    border-spacing: 10px;
-   
-     
+ul {
+    
+            color: white;
+            padding: 14px 25px;
+            text-align: center; 
+            text-decoration: none;
+            display: inline-block;
+}
+#tittle{
+    width:600px;
 }
