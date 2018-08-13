@@ -32,6 +32,7 @@
     padding-top: 0px;
     width: 50%;
     height: 450px;
+    border-radius: 5px;
 }
 
 #usercredentials {
@@ -59,7 +60,7 @@
 input {
   background-color:lightgrey;  
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: none;
   border-radius: 4px;
   margin: 5px 0;
@@ -67,7 +68,7 @@ input {
   display: inline-block;
   font-size: 17px;
   line-height: 15px;
-  text-decoration: none; /* remove underline from anchors */
+  text-decoration: none; 
 }
 input[type=submit] {
     background-color:rgb(99, 104, 170);
