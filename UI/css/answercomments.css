@@ -88,16 +88,7 @@ input {
 
  a {
             text-decoration: none !important;
-<<<<<<< HEAD
             
-=======
-            background-color:royalblue;
-            color: white;
-            padding: 14px 25px;
-            text-align: center; 
-            text-decoration: none;
-            display: inline-block;
->>>>>>> 70358c5ba3bd67688cad43d8ff148391ceee9ceb
         
 }
 button {
@@ -109,7 +100,6 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-<<<<<<< HEAD
     border-radius: 4px;
 }
 h4{
@@ -120,8 +110,5 @@ h4{
 
 }
 
-=======
-}
->>>>>>> 70358c5ba3bd67688cad43d8ff148391ceee9ceb
 
 
