@@ -79,14 +79,22 @@ input[type=submit] {
   }
   .card{
       padding:20px;
+<<<<<<< HEAD
       background-color: rgb(69, 34, 165);
       margin :10px;
       border-radius:8px;
       
+=======
+      float:center;
+      margin :10px;
+      border-radius:8px;
+      width:100%
+>>>>>>> 70358c5ba3bd67688cad43d8ff148391ceee9ceb
    
   }
   #questionbody{
     line-height:100px;
+<<<<<<< HEAD
     width:600px
 
 }
@@ -101,3 +109,7 @@ ul {
 #tittle{
     width:600px;
 }
+=======
+
+}
+>>>>>>> 70358c5ba3bd67688cad43d8ff148391ceee9ceb
