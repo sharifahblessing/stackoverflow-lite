@@ -2,7 +2,7 @@
     background-color: rgb(69, 34, 165);
     overflow: hidden;
     border-radius: 20px;
-    height:50px;
+    height:70px;
 
 }
 
@@ -61,6 +61,14 @@ ul{
 }
 button{
     background-color: rgb(69, 34, 165);
+    border: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
     
 }
 h4{
@@ -75,6 +83,28 @@ table{
    
      
 }
+.card {
+   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+li {
+    display: inline-block;
+    border-color: rgb(69, 34, 165);
+    padding: 10px;
+    border: 2px solid rgb(69, 34, 165);
+    border-radius: 10px;
+    background-color:lightgrey;
+}
+.follow td{
+    border:2px solid grey;
+    border-radius: 10px;
+    background-color:lightgrey;
+    font-style: italic;
+    padding: 10px;
 
+
+}
 
 

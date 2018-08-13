@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Answers and comments</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/answercomments.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/answercomments.css" />    
 </head>
 <body>
     
@@ -39,6 +38,7 @@
         
         <div class= "container">
                 <P><strong>Question & Answers</strong></P>
+        
         <div class="card">
                 <div class="container1">
                     <div class="option-wrapper">
@@ -50,41 +50,44 @@
                         </ul>
                     </div>
                     
-                <a href = "">
+                <a href = "../template/answercomments.html">
                         <h4><strong> How does a Python module differ from a python package?</strong></h4>
                 </a>
                         <p>Asked by <a class="person" href = "">sharifah Abdulkareem, telecommunications engineer</a> at 2:30 pm</p>
                         <p><br><p>Whenever I do from 'x' import 'y' I was wondering which one is considered the <br>'module' and which is the 'package', and why it isn't the other way around?<p/><br>
                         
                         </p>
-                        <tbody id="briefinsight">
-                                <tr class="followsview">
+                        <table class="follow">
+                        <tbody >
+                                <tr>
                                    <td><a href="">15 Follows</a></td>
                                    <td><a href=""> 20 Views</a></td>
                                    <td><a href="">10 Comments & Answers</a></td>
+                                   
                                                    
                                 </tr>   
-                           </tbody>
-                           
-                        <div class="answers">
-                            <div id="answer1">
+                        </tbody>
+                </table>
+                </div>
+                        <div class="answercoment">
+                            <div class="card">
                             <p>A Python module is simply a Python source file, which can expose classes, functions and global variables.<br>When imported from another Python source file, the file name is treated as a namespace.<br>A Python package is simply a directory of Python module(s).
                                     <br>For example, imagine the following directory tree in /usr/lib/python/site-packages:
                                     <br>mypackage/__init__.py <-- this is what tells Python to treat this directory as a package
                                     <br>mypackage/mymodule.py
                                     <br>So then you would do:<br>import mypackage.mymodule<br>or<br>from mypackage.mymodule import myclass</p><p>Answered by <a href="">katerega Lawrence, Junior developer at facebook</a></p>
                             </div>
-                            <div id="comment1">
+                            <div class="card">
                                     <p>I, for one, am thankful for this question, because the answer is concise and gives the exact needed knowledge.<br> The documentation is all fine and dandy, but it's verbose and contains way more information<br> than what the OP was asking for, and certainly more than I needed. I just wanted an answer to that specific question,<br> and the answer below is exactly what I wanted. Many of us just don't need such formal or in-depth answers. 
                                     <p>commented by <a href="">Ssesanga Abdul karim, Developer at Twitter</a></p>
                                     </div>
                         </div>
-                    <div class="card_comment&answer">
+                    <div class="writeanswer">
                         <textarea id="answercontent" placeholder="Write your answer"></textarea><br>
                         <button>Submit Answer</button>
                     </div>
                 </div>
-        </div>
+        
 </div>
 </body>
 </html>
