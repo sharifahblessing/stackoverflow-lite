@@ -1,0 +1,81 @@
+.navigation {
+    background-color: rgb(69, 34, 165);
+    overflow: hidden;
+    border-radius: 20px;
+    height:50px;
+
+}
+
+
+.navigation a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navigation a:hover {
+    background-color: #ddd;
+    
+}
+
+
+.navigation a.intro {
+    background-color: rgb(152, 156, 221);
+    color: white;
+}
+
+#image {
+    float: left;
+    padding-top: 0px;
+    width: 50%;
+    height: 450px;
+    border-radius: 5px;
+}
+
+#usercredentials {
+    float: right;
+    width: 45%;
+    height: 450px;
+
+}
+.homepagesignup{
+    
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
+    padding: 25px;
+    width: 800px;
+    position: absolute;
+    bottom: initial;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow-y: hidden;
+    top: 15%;
+}
+input {
+  background-color:lightgrey;  
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 15px;
+  text-decoration: none; 
+}
+input[type=submit] {
+    background-color:rgb(99, 104, 170);
+    color: white;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color:rgb(99, 104, 170);
+  }
