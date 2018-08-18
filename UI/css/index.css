@@ -1,5 +1,5 @@
 .navigation {
-    background-color: rgb(69, 34, 165);
+    background-color: #4464AD;
     overflow: hidden;
     border-radius: 20px;
     height:50px;
@@ -71,7 +71,7 @@ input {
   text-decoration: none; 
 }
 input[type=submit] {
-    background-color:rgb(99, 104, 170);
+    background-color: #4464AD;
     color: white;
     cursor: pointer;
   }

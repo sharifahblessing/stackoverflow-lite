@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(69, 34, 165);
+    background-color: #4464AD;
     overflow: hidden;
     border-radius: 20px;
     height:70px;
@@ -88,6 +88,7 @@ table{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
+    padding:16px;
 }
 li {
     display: inline-block;
@@ -98,7 +99,7 @@ li {
     background-color:lightgrey;
 }
 .follow td{
-    border:2px solid grey;
+    border:2px solid #F58F29;
     border-radius: 10px;
     background-color:lightgrey;
     font-style: italic;
@@ -107,4 +108,7 @@ li {
 
 }
 
+.tags{
+    color: #7D4600;
+}
 

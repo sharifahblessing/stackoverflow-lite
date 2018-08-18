@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(69, 34, 165);
+    background-color: #4464AD;
     overflow: hidden;
     border-radius: 20px;
     height:50px;
@@ -79,11 +79,9 @@ input[type=submit] {
   }
   .card{
       padding:20px;
-      background-color: rgb(69, 34, 165);
+      background-color:  #4464AD;
       margin :10px;
       border-radius:8px;
-      
-      float:center;
       margin :10px;
       border-radius:8px;
       width:100%
