@@ -111,7 +111,7 @@ class PostAnswer(Resource):
 
                 """insert into the list"""
                 questions_list.append(convert_obj_data)
-                return {'message': 'answer posted successfully.'}, 200
+                return {'message': 'answer posted successfully.'}, 201
 
         return make_response(jsonify({
             'message':'Sorry the question does not exist'
