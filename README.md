@@ -1,4 +1,6 @@
 # stackoverflow lite
+[![Build Status](https://travis-ci.org/sharifahblessing/stackoverflow-lite.svg?branch=develop)](https://travis-ci.org/sharifahblessing/stackoverflow-lite)
+
 
 StackOverflow-lite is a platform where people can ask questions and provide answers.  
 
