@@ -17,3 +17,17 @@ class Question_model:
             'postedby':self.postedby,
             'time':self.time
         })
+
+
+class Answer_model:
+    def __init__(self, id, content):
+        self.id = id
+        self.content = content
+      
+
+    def my_json(self):
+        return json.dumps({
+            'id':self.id,
+            'content':self.content,
+          
+        })
