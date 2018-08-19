@@ -1,6 +1,6 @@
 # stackoverflow lite
 [![Build Status](https://travis-ci.org/sharifahblessing/stackoverflow-lite.svg?branch=develop)](https://travis-ci.org/sharifahblessing/stackoverflow-lite)
-[![Coverage Status](https://coveralls.io/repos/github/sharifahblessing/stackoverflow-lite/badge.svg?branch=develop)](https://coveralls.io/github/sharifahblessing/stackoverflow-lite?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/sharifahblessing/stackoverflow-lite/badge.svg?branch=master)](https://coveralls.io/github/sharifahblessing/stackoverflow-lite?branch=master)
 
 StackOverflow-lite is a platform where people can ask questions and provide answers.  
 
