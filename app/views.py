@@ -1,10 +1,11 @@
 from flask import Flask, jsonify, make_response
 from flask_restful import Resource, Api, reqparse
 import datetime
-from app.models import Question_model
+from app.models import Question_model, Answer_model
 import json
 
 questions_list =[]
+answers_list =[]
 class Questions (Resource):
     def post(self):
         parser= reqparse.RequestParser()
@@ -78,6 +79,46 @@ class SingleQuestion(Resource):
         return make_response(jsonify({
             'message':'Sorry the question does not exist'
         }),404)
+
+
+class PostAnswer(Resource):
+
+
+    
+    def post(self,questionId):
+
+        parser= reqparse.RequestParser()
+        """collecting arguments"""
+        parser.add_argument('id',type=int,required=True)
+        parser.add_argument('content',type=str,required=True)
+        
+
+        """getting specific arguments"""
+
+        argument = parser.parse_args()
+
+        id = argument['id']
+        content = argument['content']
+
+        for our_list in questions_list:
+            if int(questionId) == int (our_list['id']):
+
+                """creating an object"""
+                obj = Answer_model(id,content)
+
+                """convert object to JSON"""
+                convert_obj_data = json.loads(obj.my_json())
+
+                """insert into the list"""
+                questions_list.append(convert_obj_data)
+                return {'message': 'answer posted successfully.'}, 200
+
+        return make_response(jsonify({
+            'message':'Sorry the question does not exist'
+        }),404)
+
+
+
 
         
 
