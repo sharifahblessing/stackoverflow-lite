@@ -1,8 +1,10 @@
 # stackoverflow lite
+[![Build Status](https://travis-ci.org/sharifahblessing/stackoverflow-lite.svg?branch=develop)](https://travis-ci.org/sharifahblessing/stackoverflow-lite)
+[![Coverage Status](https://coveralls.io/repos/github/sharifahblessing/stackoverflow-lite/badge.svg?branch=develop)](https://coveralls.io/github/sharifahblessing/stackoverflow-lite?branch=develop)
 
 StackOverflow-lite is a platform where people can ask questions and provide answers.  
 
-To acces this API online visit [API Link ]()
+To acces this API online visit [API Link ](https://stackoverflow-app-lite.herokuapp.com)
 
 ### Requirements Building blocks.
 - ```Python3``` - A programming language that lets us work more quickly (The universe loves speed!).
