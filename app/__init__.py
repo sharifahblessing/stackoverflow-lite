@@ -3,7 +3,7 @@ from flask_restful import Api
 from app.views import Questions,SingleQuestion,PostAnswer
 
 app = Flask(__name__)
-app.secret_key="sh"
+
 
 """initializing an API"""
 api = Api(app)
