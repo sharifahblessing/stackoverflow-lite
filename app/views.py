@@ -55,8 +55,29 @@ class Questions (Resource):
         }
         ),201)
 
+    def get(self):
+        return {'questions':questions_list},200
 
-   
+
+class SingleQuestion(Resource):
+
+    def get(self,questionId):
+
+        for our_list in questions_list:
+            if int(questionId) == int (our_list['id']):
+                final_data = {
+                    'id' : our_list['id'],
+                    'title':our_list['title'],
+                    'body':our_list['body'],
+                    'tag':our_list['tag'],
+                    'time':our_list['time'],
+                    'postedby':our_list['postedby']
+                }
+                return {'question': final_data}, 200
+
+        return make_response(jsonify({
+            'message':'Sorry the question does not exist'
+        }),404)
 
         
 
