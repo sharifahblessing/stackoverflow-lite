@@ -21,7 +21,6 @@ ratings:
 exclude_paths:
   - "*docs/*"
   - "*examples/*"
-  - "*api/songs/models*"
   - "*/site-packages/*"
   - "*markupsafe/*"
   - "*psycopg2/*"
@@ -41,7 +40,6 @@ exclude_paths:
   - "*numbers.py*"
   - "*pydoc.py*"
   - "*http/*"
-  - "*app/user/__init__.py*"
   - "*app/__init__.py*"
   - "*app/__init__.py*"
   - "*app/config.py*"
@@ -50,4 +48,4 @@ exclude_paths:
   - "*html/*"
   - "*_bootlocale.py*"
   - "*typing.py*"
-  - "*app/user/authentication.py*"
+  - 

@@ -11,7 +11,7 @@ class Questions (Resource):
         parser= reqparse.RequestParser()
 
         """collecting arguments"""
-        parser.add_argument('id',type=int,required=True)
+        parser.add_argument('questionid',type=int,required=True)
         parser.add_argument(str('title').strip(),required=True)
         parser.add_argument('body',type=str,required=True)
         parser.add_argument('tag',type=str,required=True)
@@ -21,7 +21,7 @@ class Questions (Resource):
 
         argument = parser.parse_args()
 
-        id = argument['id']
+        questionid = argument['questionid']
         title = argument['title']
         body = argument['body']
         tag = argument['tag']
@@ -29,11 +29,59 @@ class Questions (Resource):
         time = str(datetime.datetime.now())
 
         """creating an object"""
-        obj = Question_model(id,title,body,tag,postedby,time)
+        questionobj = Question_model(questionid,title,body,tag,postedby,time)
 
         """convert object to JSON"""
-        convert_obj_data = json.loads(obj.my_json())
+        convert_questionobj_data = json.loads(questionobj.my_json())
 
+        """checking whether the empty questionid feild and negative id"""
+        if  questionid < 0:
+            return make_response(jsonify(
+        {
+            'message':'The questionid has to be a positive int for this question to be posted'  
+                }
+            ),400)
+
+        if questionid == 0:
+            return make_response(jsonify(
+        {
+
+            'message':'The questionid should  be above zero'
+            }
+
+            ),400)
+        
+        
+        
+        """checking whether the empty title feild"""
+        if  not title:
+            return make_response(jsonify(
+        {
+            'message':'The title is needed for this question to be posted'  
+                }
+            ),400)
+        """checking whether the empty body feild"""
+        if  not body:
+            return make_response(jsonify(
+        {
+            'message':'Body is needed for this question to be posted'  
+                }
+            ),400)
+        """checking whether the empty tag feild"""
+        if  not tag:
+            return make_response(jsonify(
+        {
+            'message':'Tag is needed for this question to be posted'  
+                }
+            ),400)
+        """checking whether the empty posted by feild"""
+        if  not postedby:
+            return make_response(jsonify(
+        {
+            'message':'postedby is needed for this question to be posted'  
+                }
+            ),400)
+        
         
         """checking for duplicates"""
 
@@ -47,7 +95,7 @@ class Questions (Resource):
 
 
         """insert into the list"""
-        questions_list.append(convert_obj_data)
+        questions_list.append(convert_questionobj_data)
 
 
         return make_response(jsonify(
@@ -65,9 +113,9 @@ class SingleQuestion(Resource):
     def get(self,questionId):
 
         for our_list in questions_list:
-            if int(questionId) == int (our_list['id']):
+            if int(questionId) == int (our_list['questionid']):
                 final_data = {
-                    'id' : our_list['id'],
+                    'questionid' : our_list['questionid'],
                     'title':our_list['title'],
                     'body':our_list['body'],
                     'tag':our_list['tag'],
@@ -89,7 +137,7 @@ class PostAnswer(Resource):
 
         parser= reqparse.RequestParser()
         """collecting arguments"""
-        parser.add_argument('id',type=int,required=True)
+        parser.add_argument('answerid',type=int,required=True)
         parser.add_argument('content',type=str,required=True)
         
 
@@ -97,20 +145,36 @@ class PostAnswer(Resource):
 
         argument = parser.parse_args()
 
-        id = argument['id']
+        answerid = argument['answerid']
         content = argument['content']
 
         for our_list in questions_list:
-            if int(questionId) == int (our_list['id']):
+            if int(questionId) == int (our_list['questionid']):
 
                 """creating an object"""
-                obj = Answer_model(id,content)
+                answerobj = Answer_model(answerid,content)
 
                 """convert object to JSON"""
-                convert_obj_data = json.loads(obj.my_json())
+                convert_answerobj_data = json.loads(answerobj.my_json())
+
+                """checking whether the empty answerid feild"""
+                if  not answerid:
+                    return make_response(jsonify(
+                {
+                  'message':'The answerid is needed for this answer to be posted'  
+                }
+                    ),400)
+                
+                """checking whether the content answerid feild"""
+                if  not content:
+                    return make_response(jsonify(
+                {
+                  'message':'The content is needed for this answer to be posted'  
+                }
+                    ),400)
 
                 """insert into the list"""
-                questions_list.append(convert_obj_data)
+                answers_list.append(convert_answerobj_data)
                 return {'message': 'answer posted successfully.'}, 201
 
         return make_response(jsonify({

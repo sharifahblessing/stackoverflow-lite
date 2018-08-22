@@ -1,7 +1,7 @@
 import json
 class Question_model:
-    def __init__(self, id, title, body, tag, postedby, time):
-        self.id = id
+    def __init__(self, questionid, title, body, tag, postedby, time):
+        self.questionid = questionid
         self.title = title
         self.body = body
         self.tag = tag
@@ -10,7 +10,7 @@ class Question_model:
 
     def my_json(self):
         return json.dumps({
-            'id':self.id,
+            'questionid':self.questionid,
             'title':self.title,
             'body':self.body,
             'tag':self.tag,
@@ -20,14 +20,14 @@ class Question_model:
 
 
 class Answer_model:
-    def __init__(self, id, content):
-        self.id = id
+    def __init__(self, answerid, content):
+        self.answerid = answerid
         self.content = content
       
 
     def my_json(self):
         return json.dumps({
-            'id':self.id,
+            'answerid':self.answerid,
             'content':self.content,
           
         })
