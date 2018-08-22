@@ -28,12 +28,26 @@ class Questions (Resource):
         postedby = argument['postedby']
         time = str(datetime.datetime.now())
 
+        
+
         """creating an object"""
         questionobj = Question_model(questionid,title,body,tag,postedby,time)
 
+                
         """convert object to JSON"""
         convert_questionobj_data = json.loads(questionobj.my_json())
+     
+                
+        """checking for duplicates"""
 
+        for our_list in questions_list:
+            if str(title).strip() == str(our_list['title']).strip():
+                 return make_response(jsonify(
+            {
+            'message':'This question already exists'           
+        }
+        ),409)
+        
         """checking whether the empty questionid feild and negative id"""
         if  questionid < 0:
             return make_response(jsonify(
@@ -81,17 +95,6 @@ class Questions (Resource):
             'message':'postedby is needed for this question to be posted'  
                 }
             ),400)
-        
-        
-        """checking for duplicates"""
-
-        for our_list in questions_list:
-            if str(title).strip() == str(our_list['title']).strip():
-                 return make_response(jsonify(
-            {
-            'message':'This question already exists'           
-        }
-        ),409)
 
 
         """insert into the list"""
