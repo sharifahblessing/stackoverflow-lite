@@ -3,14 +3,35 @@ import json
 from tests import BaseTestCase
 
 class Tests_Requests(BaseTestCase):
+    
+    def test_question_emptytitle_successfully(self):
+        """Tests when the questions title feild emptya"""
+        with self.client:
+            response = self.add_question("1","","hello world","java","kenneth")
+            self.assertEqual(response.status_code, 400)
+    def test_question_emptybody_successfully(self):
+        """Tests when the questions body feild emptya"""
+        with self.client:
+            response = self.add_question("1","hello","","java","kenneth")
+            self.assertEqual(response.status_code, 400)
+    def test_question_emptytag_successfully(self):
+        """Tests when the questions tag feild emptya"""
+        with self.client:
+            response = self.add_question("1","","hello world","","kenneth")
+            self.assertEqual(response.status_code, 400)
+    def test_question_emptypostedby_successfully(self):
+        """Tests when the questions title feild emptya"""
+        with self.client:
+            response = self.add_question("1","","hello world","java","")
+            self.assertEqual(response.status_code, 400)
+
     """Test for questions"""
     def test_question_submission_successfully(self):
         """Tests when the questions  are submitted successfully"""
         with self.client:
             response = self.add_question("1","hello","hello world","java","kenneth")
             self.assertEqual(response.status_code, 201)
-                   
-
+                          
     def test_get_all_questions(self):
         """Tests when all question are retrieved successfully"""
         with self.client:
@@ -49,7 +70,7 @@ class Tests_Requests(BaseTestCase):
             """first insert a question"""
             response = self.add_question("1","hello","hello world","java","kenneth")
             self.assertEqual(response.status_code, 201)
-            """then get a specific question"""
+            """then get a specific question to answer"""
             response = self.post_answer(1,"1","try removing errors")
             self.assertEqual(response.status_code, 201)
 
