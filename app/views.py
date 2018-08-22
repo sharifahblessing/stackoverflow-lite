@@ -12,7 +12,7 @@ class Questions (Resource):
 
         """collecting arguments"""
         parser.add_argument('id',type=int,required=True)
-        parser.add_argument('title',type=str,required=True)
+        parser.add_argument(str('title').strip(),required=True)
         parser.add_argument('body',type=str,required=True)
         parser.add_argument('tag',type=str,required=True)
         parser.add_argument('postedby',type=str,required=True)
