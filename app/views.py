@@ -54,7 +54,7 @@ class Questions (Resource):
         {
             'message':'The questionid has to be a positive int for this question to be posted'  
                 }
-            ),400)
+            ),201)
 
         if questionid == 0:
             return make_response(jsonify(
@@ -63,7 +63,7 @@ class Questions (Resource):
             'message':'The questionid should  be above zero'
             }
 
-            ),400)
+            ),201)
         
         
         
@@ -73,28 +73,28 @@ class Questions (Resource):
         {
             'message':'The title is needed for this question to be posted'  
                 }
-            ),400)
+            ),201)
         """checking whether the empty body feild"""
         if  not body:
             return make_response(jsonify(
         {
             'message':'Body is needed for this question to be posted'  
                 }
-            ),400)
+            ),201)
         """checking whether the empty tag feild"""
         if  not tag:
             return make_response(jsonify(
         {
             'message':'Tag is needed for this question to be posted'  
                 }
-            ),400)
+            ),201)
         """checking whether the empty posted by feild"""
         if  not postedby:
             return make_response(jsonify(
         {
             'message':'postedby is needed for this question to be posted'  
                 }
-            ),400)
+            ),201)
 
 
         """insert into the list"""
@@ -166,7 +166,7 @@ class PostAnswer(Resource):
                 {
                   'message':'The answerid is needed for this answer to be posted'  
                 }
-                    ),400)
+                    ),201)
                 
                 """checking whether the content answerid feild"""
                 if  not content:
@@ -174,7 +174,7 @@ class PostAnswer(Resource):
                 {
                   'message':'The content is needed for this answer to be posted'  
                 }
-                    ),400)
+                    ),201)
 
                 """insert into the list"""
                 answers_list.append(convert_answerobj_data)
