@@ -1,0 +1,79 @@
+FORMAT: 1A
+HOST: https://stackoverflow-app-lite.herokuapp.com
+
+# stackoverflow-lite
+
+StackOverﬂow-lite is a platform where people can ask questions and provide answers.  
+
+
+## Questions Collection [/api/v1/questions]
+
+### Get All Questions [GET]
+
++ Response 200 (application/json)
+
+        {
+            "questions": [
+        {
+            "questionid": 2,
+            "title": "h",
+            "body": "Hey there, could anyone help me tell me the various steps taken to become a proficient developer",
+            "tag": "t",
+            "postedby": "Sue jones",
+            "time": "2018-08-23 17:41:53.729267"
+        }
+           ]
+        }
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+            "message": "created a question successfully"
+            }
+             
+## Single Question [/api/v1/questions/{questionid}]
+### Get a Single Question [GET]
+
+You may get a specific question by (ID).
+
++ Response 200 (application/json)
+
+            {
+            "question": {
+            "questionid": 2,
+            "title": "h",
+            "body": "Hey there, could anyone help me tell me the various steps taken to become a proficient developer",
+            "tag": "t",
+            "time": "2018-08-23 17:41:53.729267",
+            "postedby": "Sue jones"
+            }
+            }
+
+
+
+## Post Answer [/api/v1/questions/{questionid}/answers]
+### POST An Answer [POST]
+
+You may get a specific question by (ID).
+
++ Response 200 (application/json)
+
+            {
+            "message": "answer posted successfully."
+            }
