@@ -1,5 +1,9 @@
 from flask import Flask
 from app import app
+from flasgger import Swagger
+
+app = Flask(__name__)
+Swagger(app)
 
 @app.route('/',methods=['GET'])
 def index():
