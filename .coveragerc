@@ -1,7 +1,9 @@
 [report]=
 show_missing = True
 omit = 
-      *api/songs/models*
+      *yaml/*
+      *venv/*
+      *.vscode/*
       */site-packages/*
       *markupsafe/*
       *psycopg2/*
@@ -21,10 +23,14 @@ omit =
       *numbers.py*
       *pydoc.py*
       *http/*
+      *app/api/user/__init__.py*
+      *app/api/request/__init__.py*
+      *app/api/__init__.py*
       *app/__init__.py*
       *app/config.py*
       *test/*
       *html/*
       *_bootlocale.py*
       *typing.py*
-      *contextvars.py*
+      *.pytest_cache/*
+      

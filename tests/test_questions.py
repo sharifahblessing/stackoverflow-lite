@@ -10,18 +10,7 @@ class Tests_Requests(BaseTestCase):
     def test_question_submission_successfully(self):
         """Tests when the questions  are submitted successfully"""
         with self.client:
-            response = self.add_question("1","","hello world","java","kenneth")
-            self.assertEqual(response.status_code, 201)
-
-            response = self.add_question("1","hello","","java","kenneth")
-            self.assertEqual(response.status_code, 201)
-
-            response = self.add_question("1","","hello world","","kenneth")
-            self.assertEqual(response.status_code, 201)
-
-            response = self.add_question("1","","hello world","java","")
-            self.assertEqual(response.status_code, 201)
-
+    
             response = self.add_question("1","hello","hello world","java","kenneth")
             self.assertEqual(response.status_code, 201)
                           

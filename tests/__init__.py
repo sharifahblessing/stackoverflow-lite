@@ -26,7 +26,7 @@ class BaseTestCase(unittest.TestCase):
         questions_list[:] = []
         answers_list[:] = []
 
-    def add_question(self, id, title, body,tag, postedby):
+    def add_question(self, questionid, title, body,tag, postedby):
         """
         Function to add a question
         """
@@ -34,7 +34,7 @@ class BaseTestCase(unittest.TestCase):
             '/api/v1/questions',
             data=json.dumps(
                 dict(
-                    id=id,
+                    questionid=questionid,
                     title=title,
                     body=body,
                     tag=tag,
@@ -55,13 +55,13 @@ class BaseTestCase(unittest.TestCase):
         """
         return self.client.get('/api/v1/questions/'+str(id))
 
-    def post_answer(self,question_id,id, content):
+    def post_answer(self,question_id,answerid, content):
         
          return self.client.post(
            '/api/v1/questions/'+str(question_id)+'/answers',
             data=json.dumps(
                 dict(
-                    id=id,
+                    answerid=answerid,
                     content=content
                 )
             ),

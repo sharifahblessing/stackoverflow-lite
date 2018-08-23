@@ -12,7 +12,7 @@ class Questions (Resource):
 
         """collecting arguments"""
         parser.add_argument('questionid',type=int,required=True)
-        parser.add_argument(str('title').strip(),required=True)
+        parser.add_argument('title',required=True)
         parser.add_argument('body',type=str,required=True)
         parser.add_argument('tag',type=str,required=True)
         parser.add_argument('postedby',type=str,required=True)
@@ -22,7 +22,7 @@ class Questions (Resource):
         argument = parser.parse_args()
 
         questionid = argument['questionid']
-        title = argument['title']
+        title = str(argument['title']).strip()
         body = argument['body']
         tag = argument['tag']
         postedby = argument['postedby']
@@ -87,14 +87,14 @@ class Questions (Resource):
         {
             'message':'Tag is needed for this question to be posted'  
                 }
-            ),201)
+            ),400)
         """checking whether the empty posted by feild"""
         if  not postedby:
             return make_response(jsonify(
         {
             'message':'postedby is needed for this question to be posted'  
                 }
-            ),201)
+            ),400)
 
 
         """insert into the list"""
@@ -151,36 +151,31 @@ class PostAnswer(Resource):
         answerid = argument['answerid']
         content = argument['content']
 
+        """checking whether the empty answerid feild"""
+       
+        
+        """checking whether the content answerid feild"""
+        if  not content:
+            return make_response(jsonify(
+        {
+            'message':'The content is needed for this answer to be posted'  
+        }
+            ),400)
+
         for our_list in questions_list:
             if int(questionId) == int (our_list['questionid']):
-
+              
                 """creating an object"""
                 answerobj = Answer_model(answerid,content)
 
                 """convert object to JSON"""
                 convert_answerobj_data = json.loads(answerobj.my_json())
 
-                """checking whether the empty answerid feild"""
-                if  not answerid:
-                    return make_response(jsonify(
-                {
-                  'message':'The answerid is needed for this answer to be posted'  
-                }
-                    ),201)
-                
-                """checking whether the content answerid feild"""
-                if  not content:
-                    return make_response(jsonify(
-                {
-                  'message':'The content is needed for this answer to be posted'  
-                }
-                    ),201)
-
                 """insert into the list"""
                 answers_list.append(convert_answerobj_data)
                 return {'message': 'answer posted successfully.'}, 201
 
-        return make_response(jsonify({
+            return make_response(jsonify({
             'message':'Sorry the question does not exist'
         }),404)
 
