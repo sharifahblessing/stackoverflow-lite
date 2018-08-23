@@ -1,10 +1,9 @@
 from flask import Flask
 from flask_restful import Api
-from flasgger import Swagger
 from app.views import Questions,SingleQuestion,PostAnswer
 
 app = Flask(__name__)
-Swagger(app)
+
 
 """initializing an API"""
 api = Api(app)
