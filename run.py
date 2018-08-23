@@ -4,6 +4,6 @@ from app import app
 
 @app.route('/',methods=['GET'])
 def index():
-    return redirect("https://tuvugeapi.docs.apiary.io/#",code=302)
+    return redirect("https://stackoverflowlite6.docs.apiary.io/#",code=302)
 if __name__ == '__main__':
-    app.run(port=5001,debug=True)
+    app.run(port=5000,debug=True)
