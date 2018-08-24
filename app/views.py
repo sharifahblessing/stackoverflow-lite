@@ -54,7 +54,7 @@ class Questions (Resource):
         {
             'message':'The questionid has to be a positive int for this question to be posted'  
                 }
-            ),201)
+            ),400)
 
         if questionid == 0:
             return make_response(jsonify(
@@ -63,7 +63,7 @@ class Questions (Resource):
             'message':'The questionid should  be above zero'
             }
 
-            ),201)
+            ),400)
         
         
         
@@ -73,14 +73,14 @@ class Questions (Resource):
         {
             'message':'The title is needed for this question to be posted'  
                 }
-            ),201)
+            ),400)
         """checking whether the empty body feild"""
         if  not body:
             return make_response(jsonify(
         {
             'message':'Body is needed for this question to be posted'  
                 }
-            ),201)
+            ),400)
         """checking whether the empty tag feild"""
         if  not tag:
             return make_response(jsonify(
